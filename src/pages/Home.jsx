@@ -62,7 +62,7 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Slide 2 */}
+         
           <div id="slide2" className="carousel-item relative w-full">
             <img
               src="https://images.pexels.com/photos/374054/pexels-photo-374054.jpeg"
@@ -84,7 +84,7 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Slide 3 */}
+          
           <div id="slide3" className="carousel-item relative w-full">
             <img
               src="https://images.pexels.com/photos/103127/pexels-photo-103127.jpeg"
@@ -108,7 +108,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 🔹 Featured Artworks: 6 most recent */}
+    
       <section>
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-2xl font-bold">Featured Artworks</h2>
