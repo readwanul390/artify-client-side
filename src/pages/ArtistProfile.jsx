@@ -58,7 +58,7 @@ const ArtistProfile = () => {
             {totalArtworks}
           </p>
           <p className="mt-1 text-sm text-gray-500">
-            Followers: <span className="font-semibold">0</span> (demo)
+            Followers: <span className="font-semibold">0</span> 
           </p>
           <p className="mt-3 text-sm text-gray-600">
             Artist bio coming soon. This section can show the artist&apos;s
