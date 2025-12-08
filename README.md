@@ -1,16 +1,154 @@
-# React + Vite
+✅
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🎨 Artify – A Creative Artwork Showcase Platform
 
-Currently, two official plugins are available:
+🔗 Live Website:
+https://fantastic-dango-cf2f9b.netlify.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 Server (API) Live:
+https://artify-server-side-eosin.vercel.app
 
-## React Compiler
+📌 Project Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Artify is a modern online artwork-sharing platform where artists can upload, showcase, explore, like, and manage digital artworks. Users can create personal galleries, save favorite artworks, and interact with other artists through a clean, responsive, and user-friendly interface.
 
-## Expanding the ESLint configuration
+This project is built as a full-stack single-page application using React, Firebase Authentication, Node.js, Express, and MongoDB.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🚀 Key Features
+
+✅ User Authentication with Email/Password & Google Login
+
+✅ Add, Update & Delete Artworks (Private Route Protected)
+
+✅ Explore Public Artworks with Search & Category Filter
+
+✅ Like System using MongoDB $inc, $push, $pull
+
+✅ Favorites System (Add & Remove Favorite Artworks)
+
+✅ Featured Artworks (Sorted by latest using sort() & limit())
+
+✅ Artist Info Section with profile photo & total artworks
+
+✅ Dark & Light Theme Toggle with LocalStorage persistence
+
+✅ Responsive Design for Mobile, Tablet & Desktop
+
+✅ Beautiful UI Animations & Effects using external React libraries
+
+✅ Protected Routes Reload Support (No auto logout on refresh)
+
+🛠️ Technology Stack
+🔹 Client Side
+
+React.js (Vite)
+
+React Router DOM
+
+Firebase Authentication
+
+Tailwind CSS + DaisyUI
+
+SweetAlert2
+
+React Awesome Reveal / React Tooltip / Typewriter (Libraries)
+
+🔹 Server Side
+
+Node.js
+
+Express.js
+
+MongoDB (Mongoose)
+
+CORS
+
+Dotenv
+
+🔹 Hosting Platforms
+
+Client: Netlify
+
+Server: Vercel
+
+📄 Pages & Functionalities
+
+🏠 Home Page – Slider, featured artworks, top artists, highlights
+
+🔍 Explore Page – Public artworks with search & filter
+
+➕ Add Artwork (Private) – Upload new artworks
+
+🖼 My Gallery (Private) – Manage own artworks
+
+❤️ My Favorites (Private) – Saved artworks list
+
+🖌 Artwork Details (Private) – Full details, likes & favorites
+
+🔐 Login & Register Pages
+
+❌ Creative 404 Page (No Navbar/Footer)
+
+🔒 Authentication & Security
+
+Firebase Authentication used for user login and registration
+
+Private Routes protected using React Router
+
+Reloading private routes does NOT redirect to login
+
+CORS configured properly for Netlify & Localhost
+
+🗃️ API Endpoints (Server)
+
+GET /artworks
+
+GET /artworks/featured
+
+GET /artworks/:id
+
+POST /artworks
+
+PATCH /artworks/:id
+
+PATCH /artworks/:id/like
+
+DELETE /artworks/:id
+
+POST /favorites
+
+GET /favorites
+
+DELETE /favorites/:id
+
+✅ Deployment & Environment Setup
+Frontend .env
+VITE_API_BASE=https://artify-server-side-eosin.vercel.app
+
+Backend .env
+MONGO_URI=your_mongodb_connection_string
+PORT=3000
+
+📌 GitHub Commit Rules (Followed)
+
+✅ Client Side: 15+ meaningful commits
+
+✅ Server Side: 8+ meaningful commits
+
+✅ No Lorem Ipsum Used
+
+✅ No default JavaScript alert used (SweetAlert only)
+
+✨ Optional Features Implemented
+
+✅ Artist Profile / Artwork Count
+
+✅ Category-based Filtering System
+
+✅ Dark/Light Theme with Persistence
+
+👨‍💻 Developed By
+
+Abu Said Mohammad Readwanul Hridoy
+Department of Computer Science & Engineering
+Assignment Category: B12-A10_category-0021

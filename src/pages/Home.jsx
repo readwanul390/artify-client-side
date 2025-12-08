@@ -153,14 +153,14 @@ const Home = () => {
             <div className="card-body">
               <h3 className="card-title">Taylor Swift</h3>
               <p>Surreal dreamlike landscapes.</p>
-              <div className="badge badge-secondary mt-2">Most Liked</div>
+              <div className="badge badge-primary mt-2">Most Liked</div>
             </div>
           </div>
           <div className="card bg-base-200 shadow-sm">
             <div className="card-body">
               <h3 className="card-title">Bad Bunny</h3>
               <p>Minimal line art inspired by daily life.</p>
-              <div className="badge badge-accent mt-2">Editor&apos;s Pick</div>
+              <div className="badge badge-primary mt-2">Editor&apos;s Pick</div>
             </div>
           </div>
         </div>
