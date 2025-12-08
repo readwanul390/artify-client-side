@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import Loader from "../components/Loader";
 
 const ArtworkDetail = () => {
-  const { id } = useParams(); // route: /artwork/:id
+  const { id } = useParams(); 
   const { user } = useContext(AuthContext) || {};
   const [artwork, setArtwork] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -24,7 +24,7 @@ const ArtworkDetail = () => {
 
   useEffect(() => {
     loadArtwork();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+   
   }, [id]);
 
   const handleLike = () => {
