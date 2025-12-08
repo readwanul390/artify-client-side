@@ -51,7 +51,7 @@ const AddArtwork = () => {
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        {/* Image URL */}
+      
         <div className="form-control">
           <label className="label">
             <span className="label-text">Image URL</span>
@@ -65,7 +65,7 @@ const AddArtwork = () => {
           />
         </div>
 
-        {/* Title */}
+       
         <div className="form-control">
           <label className="label">
             <span className="label-text">Title</span>
@@ -79,7 +79,7 @@ const AddArtwork = () => {
           />
         </div>
 
-        {/* Category + Medium */}
+        
         <div className="grid md:grid-cols-2 gap-4">
           <div className="form-control">
             <label className="label">
@@ -110,7 +110,7 @@ const AddArtwork = () => {
           </div>
         </div>
 
-        {/* Description */}
+        
         <div className="form-control">
           <label className="label">
             <span className="label-text">Description</span>
@@ -124,7 +124,7 @@ const AddArtwork = () => {
           ></textarea>
         </div>
 
-        {/* Dimensions + Price (optional) */}
+       
         <div className="grid md:grid-cols-2 gap-4">
           <div className="form-control">
             <label className="label">
@@ -152,7 +152,7 @@ const AddArtwork = () => {
           </div>
         </div>
 
-        {/* Visibility + user info */}
+        
         <div className="grid md:grid-cols-2 gap-4">
           <div className="form-control">
             <label className="label">

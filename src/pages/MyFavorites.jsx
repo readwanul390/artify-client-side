@@ -26,7 +26,7 @@ const MyFavorites = () => {
 
   useEffect(() => {
     loadFavorites();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, [user]);
 
   const handleUnfavorite = (favId) => {

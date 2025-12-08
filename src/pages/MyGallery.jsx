@@ -8,7 +8,7 @@ import Loader from "../components/Loader";
 const MyGallery = () => {
   const { user } = useContext(AuthContext) || {};
   const [artworks, setArtworks] = useState([]);
-  const [editing, setEditing] = useState(null); // artwork object
+  const [editing, setEditing] = useState(null); 
   const [loading, setLoading] = useState(true);
 
   const loadMyArtworks = () => {
@@ -26,7 +26,6 @@ const MyGallery = () => {
 
   useEffect(() => {
     loadMyArtworks();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   const handleDelete = (id) => {
@@ -140,7 +139,7 @@ const MyGallery = () => {
         </div>
       )}
 
-      {/* Update Modal (daisyUI) */}
+    
       {editing && (
         <dialog open className="modal">
           <div className="modal-box">
