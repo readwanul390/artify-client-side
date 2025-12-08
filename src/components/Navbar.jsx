@@ -52,7 +52,7 @@ const Navbar = () => {
             </NavLink>
           </li>
 
-          {/* ✅ Artist Profile Nav Link */}
+         
           <li>
             <NavLink
               to={`/artist/${encodeURIComponent(user.email)}`}
@@ -70,9 +70,9 @@ const Navbar = () => {
 
   return (
     <div className="navbar bg-base-100 shadow-sm">
-      {/* LEFT */}
+      
       <div className="navbar-start">
-        {/* Mobile menu */}
+        
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none"
@@ -88,20 +88,19 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Logo */}
+      
         <Link to="/" className="btn btn-ghost text-xl font-bold">
           🎨 Artify
         </Link>
       </div>
 
-      {/* CENTER */}
+      
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
 
-      {/* RIGHT */}
       <div className="navbar-end gap-2">
-        {/* Theme Toggle */}
+       
         <button onClick={toggleTheme} className="btn btn-ghost btn-circle">
           {theme === "light" ? "🌙" : "☀️"}
         </button>
