@@ -92,7 +92,7 @@ const Footer = () => {
                   href="mailto:support@artify.com" 
                   className="text-slate-300 hover:text-purple-400 transition-colors"
                 >
-                  support@artify.com
+                  abusaidreadwanul@copyright
                 </a>
               </li>
             </ul>
