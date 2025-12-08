@@ -1,4 +1,3 @@
-// src/pages/Register.jsx
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
