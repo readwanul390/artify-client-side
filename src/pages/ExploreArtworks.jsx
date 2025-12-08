@@ -35,7 +35,6 @@ const ExploreArtworks = () => {
 
   useEffect(() => {
     loadArtworks();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category]);
 
   const handleSearch = (e) => {
@@ -70,7 +69,7 @@ const ExploreArtworks = () => {
         </form>
       </div>
 
-      {/* Category Filter Buttons */}
+
       <div className="flex flex-wrap gap-2">
         {CATEGORIES.map((cat) => (
           <button
