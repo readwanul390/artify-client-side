@@ -1,4 +1,4 @@
-// src/pages/Home.jsx
+
 import { useEffect, useState } from "react";
 import ArtworkCard from "../components/ArtworkCard";
 import { API_BASE } from "../api";
@@ -10,7 +10,7 @@ const Home = () => {
   const [featured, setFeatured] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Load 6 most recent public artworks from backend
+  
   useEffect(() => {
     fetch(`${API_BASE}/artworks/featured`)
       .then((res) => res.json())
@@ -26,10 +26,10 @@ const Home = () => {
 
   return (
     <div className="space-y-12">
-      {/* 🔹 Banner / Slider with 3 slides */}
+      
       <section className="rounded-2xl overflow-hidden shadow-md relative">
         <div className="carousel w-full">
-          {/* Slide 1 */}
+          
           <div id="slide1" className="carousel-item relative w-full">
             <img
               src="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg"
@@ -138,27 +138,27 @@ const Home = () => {
         )}
       </section>
 
-      {/* 🔹 Extra Section 1: Top Artists of the Week */}
+      
       <section>
         <h2 className="text-2xl font-bold mb-4">Top Artists of the Week</h2>
         <div className="grid gap-4 md:grid-cols-3">
           <div className="card bg-base-200 shadow-sm">
             <div className="card-body">
-              <h3 className="card-title">Amina Rahman</h3>
+              <h3 className="card-title">Readwanul</h3>
               <p>Abstract digital illustrations.</p>
               <div className="badge badge-primary mt-2">Trending</div>
             </div>
           </div>
           <div className="card bg-base-200 shadow-sm">
             <div className="card-body">
-              <h3 className="card-title">Liam Rodriguez</h3>
+              <h3 className="card-title">Taylor Swift</h3>
               <p>Surreal dreamlike landscapes.</p>
               <div className="badge badge-secondary mt-2">Most Liked</div>
             </div>
           </div>
           <div className="card bg-base-200 shadow-sm">
             <div className="card-body">
-              <h3 className="card-title">Maya Patel</h3>
+              <h3 className="card-title">Bad Bunny</h3>
               <p>Minimal line art inspired by daily life.</p>
               <div className="badge badge-accent mt-2">Editor&apos;s Pick</div>
             </div>
@@ -166,7 +166,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 🔹 Extra Section 2: Community Highlights */}
+     
       <section>
         <h2 className="text-2xl font-bold mb-4">Community Highlights</h2>
         <div className="stats shadow w-full">
