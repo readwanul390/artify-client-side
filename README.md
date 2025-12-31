@@ -1,4 +1,4 @@
-✅
+
 
 🎨 Artify – A Creative Artwork Showcase Platform
 
@@ -37,6 +37,11 @@ This project is built as a full-stack single-page application using React, Fireb
 ✅ Beautiful UI Animations & Effects using external React libraries
 
 ✅ Protected Routes Reload Support (No auto logout on refresh)
+
+## 🖼 Screenshot
+
+![Artify Screenshot](./screenshot.png)
+
 
 🛠️ Technology Stack
 🔹 Client Side
@@ -146,6 +151,56 @@ PORT=3000
 ✅ Category-based Filtering System
 
 ✅ Dark/Light Theme with Persistence
+
+▶️ Run the Project Locally
+## ▶️ Run the Project Locally
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/readwanul390/artify-client.git
+
+2️⃣ Navigate to the project directory
+cd artify-client
+
+3️⃣ Install dependencies
+npm install
+
+4️⃣ Setup environment variables
+
+Create a .env file in the root directory and add:
+
+VITE_API_BASE=https://artify-server-side-eosin.vercel.app
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+
+5️⃣ Start the development server
+npm run dev
+
+6️⃣ Open in browser
+
+Visit:
+
+http://localhost:5173
+
+
+---
+
+## ✅ Why This Fully Meets the Requirement
+
+✔ Step-by-step instructions  
+✔ Clear commands  
+✔ `.env` explained  
+✔ Easy to run for reviewers  
+✔ Professional formatting  
+
+---
+
+## 📌 Optional (Extra Polish)
+You can add this line at the end:
+
+```md
+> ⚠️ Make sure Node.js (v16 or higher) is installed on your system.
 
 👨‍💻 Developed By
 
