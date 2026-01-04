@@ -3,7 +3,7 @@
 🎨 Artify – A Creative Artwork Showcase Platform
 
 🔗 Live Website:
-https://fantastic-dango-cf2f9b.netlify.app
+https://artify-client-side.netlify.app/
 
 🔗 Server (API) Live:
 https://artify-server-side-eosin.vercel.app

@@ -68,11 +68,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Support</h3>
             <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-slate-300 hover:text-purple-400 transition-colors">
-                  Help Center
-                </a>
-              </li>
+              
               <li>
                 
                 <Link to="/condition" className="text-slate-300 hover:text-purple-400 transition-colors">
