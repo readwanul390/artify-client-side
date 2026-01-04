@@ -23,6 +23,11 @@ import MyFavorites from "./pages/dashboard/MyFavorites";
 
 // Private Route
 import PrivateRoute from "./components/PrivateRoute";
+import About from "./pages/About";
+import Privacy from "./pages/Privacy";
+import Conditions from "./pages/Conditions";
+import { FcContacts } from "react-icons/fc";
+import Contact from "./pages/contact";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +41,7 @@ const router = createBrowserRouter([
       { path: "categories", element: <CategoryFilter /> },
       { path: "login", element: <Login /> },
       { path: "register", element: <Register /> },
+      { path: "contact", element: <Contact /> }
     ],
   },
 
@@ -54,6 +60,15 @@ const router = createBrowserRouter([
       { path: "my-favorites", element: <MyFavorites /> },
       { path: "profile", element: <ArtistProfile/> },
     ],
+  },
+  {
+    path:'/about', element: <About />
+  },
+  {
+    path:'/privacy', element: <Privacy />
+  },
+  {
+    path:'/condition', element: <Conditions />
   },
 
   { path: "*", element: <NotFound /> },

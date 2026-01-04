@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link, NavLink } from "react-router-dom";
+import { FaFacebook, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -18,25 +20,25 @@ const Footer = () => {
             </p>
             <div className="flex gap-3">
               <a 
-                href="#" 
+                href="https://www.facebook.com/readwan.547" 
                 className="w-10 h-10 bg-slate-800 hover:bg-purple-600 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="Facebook"
+                aria-label="Facebook" target="_blank"
               >
-                <span className="text-xl">📘</span>
+                <span className="text-xl"><FaFacebook /></span>
               </a>
               <a 
                 href="#" 
                 className="w-10 h-10 bg-slate-800 hover:bg-pink-600 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="Instagram"
+                aria-label="Github" target="_blank"
               >
-                <span className="text-xl">📸</span>
+                <span className="text-xl"><FaGithub /></span>
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/abu-said-mohammad-readwanul/" 
                 className="w-10 h-10 bg-slate-800 hover:bg-blue-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="X"
+                aria-label="Linkedin" target="_blank"
               >
-                <span className="text-xl">𝕏</span>
+                <span className="text-xl"><FaLinkedinIn /></span>
               </a>
             </div>
           </div>
@@ -46,23 +48,17 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-slate-300 hover:text-purple-400 transition-colors">
-                  About Us
-                </a>
+                <Link to="/about" className="text-slate-300 hover:text-purple-400 transition-colors">About</Link>
               </li>
               <li>
-                <a href="#" className="text-slate-300 hover:text-purple-400 transition-colors">
-                  Gallery
-                </a>
+                <Link to="dashboard/my-gallery">My Gallery</Link>
               </li>
               <li>
-                <a href="#" className="text-slate-300 hover:text-purple-400 transition-colors">
-                  Artists
-                </a>
+                <Link to="dashboard/profile">Artist</Link>
               </li>
               <li>
-                <a href="#" className="text-slate-300 hover:text-purple-400 transition-colors">
-                  Blog
+                <a href="/Contact" className="text-slate-300 hover:text-purple-400 transition-colors">
+                  Contact Me
                 </a>
               </li>
             </ul>
@@ -78,14 +74,15 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-slate-300 hover:text-purple-400 transition-colors">
+                
+                <Link to="/condition" className="text-slate-300 hover:text-purple-400 transition-colors">
                   Terms of Service
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-slate-300 hover:text-purple-400 transition-colors">
+                <Link to="/privacy" className="text-slate-300 hover:text-purple-400 transition-colors">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
                 <a 

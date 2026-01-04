@@ -47,6 +47,16 @@ const Navbar = () => {
           Categories
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/Contact"
+          className={({ isActive }) =>
+            isActive ? "text-primary font-semibold" : ""
+          }
+        >
+          Contact Us
+        </NavLink>
+      </li>
 
       {/* ✅ Dashboard link only when logged in */}
       {user && (

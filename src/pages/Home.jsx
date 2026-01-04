@@ -147,7 +147,7 @@ const Home = () => {
         ) : (
           <>
             <Fade cascade damping={0.1} triggerOnce>
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                 {featured.map((art) => (
                   <ArtworkCard key={art._id} artwork={art} />
                 ))}
@@ -222,6 +222,21 @@ const Home = () => {
           ))}
         </div>
       </section>
+      <section className="bg-base-200 rounded-2xl p-10 text-center">
+  <h2 className="text-3xl font-bold mb-4">
+    Want to <span className="text-primary">Work Together?</span>
+  </h2>
+
+  <p className="text-gray-600 max-w-xl mx-auto mb-6">
+    Have a project idea, collaboration, or just want to say hello?
+    Feel free to reach out anytime.
+  </p>
+
+  <Link to="/Contact" className="btn btn-primary rounded-full px-8">
+    Contact Me
+  </Link>
+</section>
+
       {/* <section>
   <h2 className="text-2xl font-bold mb-4">How Artify Works</h2>
   <div className="grid md:grid-cols-3 gap-4">
