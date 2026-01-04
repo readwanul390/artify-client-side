@@ -16,11 +16,11 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    const hasUpper = /[A-Z]/.test(password);
-    const hasLower = /[a-z]/.test(password);
+    // const hasUpper = /[A-Z]/.test(password);
+    // const hasLower = /[a-z]/.test(password);
     const minLength = password.length >= 6;
 
-    if (!hasUpper || !hasLower || !minLength) {
+    if (!minLength) {
       Swal.fire(
         "Invalid password",
         "Password must contain uppercase, lowercase and at least 6 characters.",

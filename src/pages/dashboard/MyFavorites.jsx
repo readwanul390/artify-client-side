@@ -1,10 +1,10 @@
-// src/pages/MyFavorites.jsx
+
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../provider/AuthProvider";
-import { API_BASE } from "../api";
+import { AuthContext } from "../../provider/AuthProvider";
+import { API_BASE } from "../../api";
 import Swal from "sweetalert2";
-import ArtworkCard from "../components/ArtworkCard";
-import Loader from "../components/Loader";
+import ArtworkCard from "../../components/ArtworkCard";
+import Loader from "../../components/Loader";
 
 const MyFavorites = () => {
   const { user } = useContext(AuthContext) || {};

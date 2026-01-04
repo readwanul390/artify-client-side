@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { AuthContext } from "../provider/AuthProvider";
+import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
-import { API_BASE } from "../api";
+import { API_BASE } from "../../api";
 
 const AddArtwork = () => {
   const { user } = useContext(AuthContext) || {};

@@ -1,22 +1,27 @@
 import { createBrowserRouter } from "react-router-dom";
 
-// Layout
+// Layouts
 import MainLayout from "./Layout/MainLayout";
+import DashboardLayout from "./Layout/DashboardLayout";
 
-// Pages
+// Public Pages
 import Home from "./pages/Home";
 import ExploreArtworks from "./pages/ExploreArtworks";
-import AddArtwork from "./pages/AddArtwork";
-import MyGallery from "./pages/MyGallery";
-import MyFavorites from "./pages/MyFavorites";
 import ArtworkDetail from "./pages/ArtworkDetail";
+import ArtistProfile from "./pages/dashboard/ArtistProfile";
+import CategoryFilter from "./pages/CategoryFilter";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
-import ArtistProfile from "./pages/ArtistProfile";
-import CategoryFilter from "./pages/CategoryFilter";
 
-// Private route wrapper
+// Dashboard Pages
+import DashboardHome from "./pages/dashboard/DashboardHome";
+import AddArtwork from "./pages/dashboard/AddArtwork";
+import MyGallery from "./pages/dashboard/MyGallery";
+import MyFavorites from "./pages/dashboard/MyFavorites";
+
+
+// Private Route
 import PrivateRoute from "./components/PrivateRoute";
 
 const router = createBrowserRouter([
@@ -24,78 +29,34 @@ const router = createBrowserRouter([
     path: "/",
     element: <MainLayout />,
     children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-
-      {
-        path: "explore",
-        element: <ExploreArtworks />,
-      },
-
-      {
-        path: "add-artwork",
-        element: (
-          <PrivateRoute>
-            <AddArtwork />
-          </PrivateRoute>
-        ),
-      },
-
-      {
-        path: "my-gallery",
-        element: (
-          <PrivateRoute>
-            <MyGallery />
-          </PrivateRoute>
-        ),
-      },
-
-      {
-        path: "my-favorites",
-        element: (
-          <PrivateRoute>
-            <MyFavorites />
-          </PrivateRoute>
-        ),
-      },
-
-      
-      {
-        path: "artwork/:id",
-        element: <ArtworkDetail />,
-      },
-
-      
-      {
-        path: "artist/:email",
-        element: <ArtistProfile />,
-      },
-
-     
-      {
-        path: "categories",
-        element: <CategoryFilter />,
-      },
-
-    
-      {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "register",
-        element: <Register />,
-      },
+      { index: true, element: <Home /> },
+      { path: "explore", element: <ExploreArtworks /> },
+      { path: "artwork/:id", element: <ArtworkDetail /> },
+      { path: "artist/:email", element: <ArtistProfile /> },
+      { path: "categories", element: <CategoryFilter /> },
+      { path: "login", element: <Login /> },
+      { path: "register", element: <Register /> },
     ],
   },
 
-  
+  // 🔐 DASHBOARD (ALL PRIVATE CRUD HERE)
   {
-    path: "*",
-    element: <NotFound />,
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout />
+      </PrivateRoute>
+    ),
+    children: [
+      { index: true, element: <DashboardHome /> },
+      { path: "add-artwork", element: <AddArtwork /> },
+      { path: "my-gallery", element: <MyGallery /> },
+      { path: "my-favorites", element: <MyFavorites /> },
+      { path: "profile", element: <ArtistProfile/> },
+    ],
   },
+
+  { path: "*", element: <NotFound /> },
 ]);
 
 export default router;

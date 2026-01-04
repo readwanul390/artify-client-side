@@ -1,4 +1,4 @@
-// src/components/ArtworkCard.jsx
+
 import { Link } from "react-router-dom";
 
 const ArtworkCard = ({ artwork }) => {

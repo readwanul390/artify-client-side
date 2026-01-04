@@ -99,7 +99,7 @@ const ArtworkDetail = () => {
         <img
           src={image}
           alt={title}
-          className="w-full rounded-xl shadow-md object-cover"
+          className="w-[50%] rounded-xl shadow-md object-cover h-[50%]"
         />
       </div>
 
