@@ -1,5 +1,6 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { API_BASE } from "../../api";
 
 const ArtistProfile = () => {
   const { user, updateUserProfile } = useContext(AuthContext);
@@ -7,19 +8,54 @@ const ArtistProfile = () => {
   const [isEditing, setIsEditing] = useState(false);
 
   // editable states
-  const [name, setName] = useState(user?.displayName || "");
-  const [photo, setPhoto] = useState(user?.photoURL || "");
-  const [bio, setBio] = useState(
-    "Provide Your artist bio here."
-  );
+  const [name, setName] = useState("");
+  const [photo, setPhoto] = useState("");
+  const [bio, setBio] = useState("");
   const [location, setLocation] = useState("");
   const [website, setWebsite] = useState("");
   const [saving, setSaving] = useState(false);
+  const [loading, setLoading] = useState(true);
 
+  /* ================= LOAD DATA ON LOGIN ================= */
+  useEffect(() => {
+    if (!user?.email) return;
+
+    // firebase auth data
+    setName(user.displayName || "");
+    setPhoto(user.photoURL || "");
+
+    // backend profile data
+    fetch(`${API_BASE}/artist-profile?email=${user.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setBio(data.bio || "");
+        setLocation(data.location || "");
+        setWebsite(data.website || "");
+      })
+      .catch((err) => console.error("Profile load error", err))
+      .finally(() => setLoading(false));
+  }, [user]);
+
+  /* ================= SAVE PROFILE ================= */
   const handleSave = async () => {
     try {
       setSaving(true);
+
+      // 1️⃣ Update Firebase Auth (name & photo)
       await updateUserProfile(name, photo);
+
+      // 2️⃣ Save artist profile to backend
+      await fetch(`${API_BASE}/artist-profile`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userEmail: user.email,
+          bio,
+          location,
+          website,
+        }),
+      });
+
       setIsEditing(false);
     } catch (err) {
       console.error(err);
@@ -28,6 +64,10 @@ const ArtistProfile = () => {
       setSaving(false);
     }
   };
+
+  if (loading) {
+    return <div className="text-center py-10">Loading profile...</div>;
+  }
 
   return (
     <div className="max-w-6xl mx-auto">
@@ -72,7 +112,9 @@ const ArtistProfile = () => {
           <div className="lg:col-span-2 bg-base-100 shadow rounded-xl p-6 space-y-4">
             <div>
               <h3 className="font-semibold">Bio</h3>
-              <p className="text-gray-600 text-sm mt-1">{bio}</p>
+              <p className="text-gray-600 text-sm mt-1">
+                {bio || "No bio added yet"}
+              </p>
             </div>
 
             <div>
@@ -84,9 +126,18 @@ const ArtistProfile = () => {
 
             <div>
               <h3 className="font-semibold">Website</h3>
-              <p className="text-sm text-primary">
-                {website || "Not provided"}
-              </p>
+              {website ? (
+                <a
+                  href={website}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm text-primary underline"
+                >
+                  {website}
+                </a>
+              ) : (
+                <p className="text-sm text-gray-500">Not provided</p>
+              )}
             </div>
           </div>
         </div>
@@ -151,7 +202,6 @@ const ArtistProfile = () => {
                 <label className="label font-medium">Location</label>
                 <input
                   className="input input-bordered w-full"
-                  placeholder="e.g. Dhaka, Bangladesh"
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
                 />
